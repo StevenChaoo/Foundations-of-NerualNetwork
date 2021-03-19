@@ -1,6 +1,6 @@
 # 卷积神经网络（CNN）
 
-> Author: StevenChaoo <<https://github.com/StevenChaoo>>
+> **Author: [StevenChaoo](https://github.com/StevenChaoo)**
 
 ## 目录
 

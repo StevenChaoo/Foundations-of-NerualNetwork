@@ -1,6 +1,6 @@
 # 神经网络基础
 
-> Author: StevenChaoo <<https://github.com/StevenChaoo>>
+> **Author: [StevenChaoo](https://github.com/StevenChaoo)**
 
 ## 目录
 
@@ -41,7 +41,7 @@ $$ f(x)=sign(wx+b) $$
 多个神经元以全连接形式层次相连，形成的网络称为前馈神经网络，也称为多层感知机（MLP），由泰勒展开可以得知，MLP理论上可以模拟所有函数
 
 <div align="center">
-	<img src="..\Pics\1.jpeg" width="70%">
+	<img src="../Pics/1.jpeg" width="70%">
 </div>
 
 其中：
@@ -79,7 +79,7 @@ $$ E=-\frac{1}{N}\sum_n\sum_kt_{nk}\mathrm{ln}y_{nk} $$
 ### 3.2 Sigmoid
 
 <div align="center">
-	<img src="..\Pics\2.png" width="30%">
+	<img src="../Pics/2.png" width="30%">
 </div>
 
 函数为：
@@ -94,7 +94,7 @@ Sigmoid有以下缺点：
 ### 3.3 Tanh
 
 <div align="center">
-  <img src="..\Pics\3.png" width="30%">
+  <img src="../Pics/3.png" width="30%">
 </div>
 
 函数为：
@@ -106,7 +106,7 @@ tanh函数在0的附近可以看作是线性的，由于其**均值是0**，所�
 ### 3.4 ReLU
 
 <div align="center">
-  <img src="..\Pics\4.png" width="30%">
+  <img src="../Pics/4.png" width="30%">
 </div>
 
 函数为：
@@ -131,7 +131,7 @@ ReLU函数的缺点：
 ### 3.5 Leaky ReLU
 
 <div align="center">
-  <img src="..\Pics\5.png" width="30%">
+  <img src="../Pics/5.png" width="30%">
 </div>
 
 函数为：

@@ -1,13 +1,13 @@
 # Foundations of Nerual Network
 
-> Author: StevenChaoo <<https://github.com/StevenChaoo>>
+> **Author: [StevenChaoo](https://github.com/StevenChaoo)**
 
 ## Contents
 
 - [Foundations of Nerual Network](#foundations-of-nerual-network)
   - [Contents](#contents)
   - [Requirment](#requirment)
-  - [Set parameters](#set-parameters)
+  - [Set Hyper-parameters](#set-hyper-parameters)
   - [Initialize parameters](#initialize-parameters)
   - [Build model](#build-model)
   - [Loss function](#loss-function)
@@ -20,7 +20,7 @@
 - torch >= 1.7.1
 - numpy >= 1.19.5
 
-## Set parameters
+## Set Hyper-parameters
 
 Sample/batch size is 64. Number of neurons in the input layer is 1000. Number of neurons in the hidden layer is 100 and output size is 10.
 
