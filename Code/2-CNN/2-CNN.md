@@ -2,11 +2,15 @@
 
 > **Author: [StevenChaoo](https://github.com/StevenChaoo)**
 
+![vscode](https://img.shields.io/badge/visual_studio_code-007acc?style=flat-square&logo=visual-studio-code&logoColor=ffffff)![neovim](https://img.shields.io/badge/Neovim-57a143?style=flat-square&logo=Neovim&logoColor=ffffff)![git](https://img.shields.io/badge/Git-f05032?style=flat-square&logo=git&logoColor=ffffff)![python](https://img.shields.io/badge/Python-3776ab?style=flat-square&logo=Python&logoColor=ffffff)
+
+This blog is written by **Neovim** and **Visual Studio Code**.
+
 ## Contents
 
 - [Convolutional Nerual Network (CNN)](#convolutional-nerual-network-cnn)
   - [Contents](#contents)
-  - [Requirment](#requirment)
+  - [Requirement](#requirement)
   - [Import instructions](#import-instructions)
   - [Create CNN network](#create-cnn-network)
   - [Get data](#get-data)
@@ -15,7 +19,7 @@
   - [Summary of main function](#summary-of-main-function)
   - [Screenshot of result](#screenshot-of-result)
 
-## Requirment
+## Requirement
 
 - torch >= 1.7.1
 - torchversion >= 0.8.2
