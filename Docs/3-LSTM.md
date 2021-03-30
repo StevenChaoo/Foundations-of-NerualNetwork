@@ -22,6 +22,7 @@ This blog is written by **Neovim** and **Visual Studio Code**. You may need to c
       - [2.2.1 Elman Network & Jordan Network](#221-elman-network--jordan-network)
       - [2.2.2 Bidirectional RNN](#222-bidirectional-rnn)
   - [3. Long Short-Term Memory](#3-long-short-term-memory)
+    - [3.1 Simple explaination for LSTM](#31-simple-explaination-for-lstm)
   - [REFERENCE](#reference)
 
 ## 1. Slot Filling Task
@@ -128,6 +129,52 @@ Going back to the previous example, through RNN, we may be able to solve the abo
 </div>
 
 ## 3. Long Short-Term Memory
+
+### 3.1 Simple explaination for LSTM
+
+LSTM is a special RNN memory module. Different from normal RNN model, LSTM has **three gates** to determine what kind of information can be stored in memory module.
+
+- **Input Gate**: Determine which vector can influence input
+- **Forget Gate**: Determine what kind of information should be forgotten
+- **Output Gate**: Determine whether output should be influenced by previous output
+
+So, you can consider that LSTM has a special neuron with **4 inputs** and **1 output**.
+
+![23](../Pics/23.jpeg)
+
+Let's make a demo with numbers. Our input is vector $X_{3\times9}$, output vector is $Y_{1\times9}$ and memory vector is $M_{1\times9}$. We make some rules for gates:
+
+- When $x_2=1$, add the numbers of $x_1$ into the memory
+- When $x_2=-1$, reset the memory
+- When $w_3=1$, output the number in the memory
+
+Thus we can express the input and memory as follows:
+$$
+\left[\begin{array}{}
+X\\
+\hdashline M\\
+\end{array}\right]=
+\left[\begin{array}{}
+1&3&2&4&2&1&3&6&1\\
+0&1&0&1&0&0&-1&1&0\\
+0&0&0&0&0&1&0&0&1\\
+\hdashline 0&0&3&3&7&7&7&0&6
+\end{array}\right]
+\tag{4}
+$$
+
+Give input $W$ vector as weight, we can compute the output vector as follow:
+$$
+Y=\begin{bmatrix}
+0&0&0&0&0&7&0&0&6
+\end{bmatrix} \tag{5}
+$$
+
+Because of 4 times of input, **LSTM has 4 times of parameters than RNN or a normal FFNN**. Obviously, **overfitting is also easier**.
+
+![24](../Pics/24.jpeg)
+
+Definitely, LSTM can not be only one layer and its input can not be so simple. Here are the details of LSTM. Upon this we could find out that LSTM is a very complex neuron but works.
 
 ## REFERENCE
 
