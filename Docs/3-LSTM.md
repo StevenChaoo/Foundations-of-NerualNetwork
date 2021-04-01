@@ -23,6 +23,13 @@ This blog is written by **Neovim** and **Visual Studio Code**. You may need to c
       - [2.2.2 Bidirectional RNN](#222-bidirectional-rnn)
   - [3. Long Short-Term Memory](#3-long-short-term-memory)
     - [3.1 Simple explaination for LSTM](#31-simple-explaination-for-lstm)
+    - [3.2 Advantages of LSTM](#32-advantages-of-lstm)
+      - [3.2.1 Drawbacks of RNN](#321-drawbacks-of-rnn)
+      - [3.2.2 Helpful Techniques](#322-helpful-techniques)
+    - [3.3 Gated Recurrent Unit](#33-gated-recurrent-unit)
+  - [4. RNN/LSTM v.s. Structured Learning](#4-rnnlstm-vs-structured-learning)
+    - [4.1 Speech Recognition](#41-speech-recognition)
+    - [4.2 Semantic Tagging](#42-semantic-tagging)
   - [REFERENCE](#reference)
 
 ## 1. Slot Filling Task
@@ -175,6 +182,82 @@ Because of 4 times of input, **LSTM has 4 times of parameters than RNN or a norm
 ![24](../Pics/24.jpeg)
 
 Definitely, LSTM can not be only one layer and its input can not be so simple. Here are the details of LSTM. Upon this we could find out that LSTM is a very complex neuron but works.
+
+### 3.2 Advantages of LSTM
+
+#### 3.2.1 Drawbacks of RNN
+
+Like others neural network, RNN needs backpropagation to update weights and bias as well.
+$$w\to w-\eta\frac{\partial L}{\partial w} \tag{6}$$
+
+Unfortunately, RNN-based network is not always easy to learn because total loss of model will be very vertical up and down.
+
+The error surface of RNN is rough. The error surface is either very flat or very steep. A simple try is setting a threshold, as long as the result exceeds this threshold, then the value is changed to this threshold to continue the next round of training.
+
+But why? Let's take a simple example. Assuming that we have a very very simple network with one layer a neuron without any active function. For each neuron, there are only one data-input, one output and one memory-input.
+
+Now, we set data input sequence is $1000\cdots000$. The final output is as followed.
+$$
+\begin{align}
+w&=1&\to\quad y^{1000}&=1\\
+w&=1.01&\to\quad y^{1000}&\approx20000 \tag{7}
+\end{align}
+$$
+
+Too large $\frac{\partial L}{\partial w}$ needs smaller learning rate.
+$$
+\begin{align}
+w&=0.99&\to\quad y^{1000}&\approx0\\
+w&=0.01&\to\quad y^{1000}&\approx0 \tag{8}
+\end{align}
+$$
+
+Too small $\frac{\partial L}{\partial w}$ needs larger learning rate. But learning rate can not be so varible. The reason for this problem is that as time continues to increase, weight is cocnstantly iterating.
+
+#### 3.2.2 Helpful Techniques
+
+Why LSTM but RNN? Because LSTM can deal with gradient vanishing (not gradient explode). Thus you can set your learning rate at a very little position.
+
+Memory and input of LSTM are added not cleaned. The influence never disappears unless forget gate is closed. Thus if forget gate is opened, there is no gradient vanishing.
+
+And due to that solution, you have to make sure forget gate always opens by giving forget gate a big bias.
+
+### 3.3 Gated Recurrent Unit
+
+A simpler model than LSTM. GRU only has two gates, conbining input gate and forget gate, to compute data. Simplily saying is that when input gate is open, forget gate will close at the same time which means clean memory. If there is no data to clean, input gate will be shut.
+
+## 4. RNN/LSTM v.s. Structured Learning
+
+- **RNN/LSTM**
+  - Unidirectional RNN does not consider the whole sequence
+  - Cost and error not always related
+  - But RNN/LSTM as a network can be very deep
+- **Structured Learning**
+  - Using Viterbi, so consider the whole sequence
+  - Can explicitly consider the label dependency
+  - Cost is the upper cound of error
+
+In summary, it seems like that structured learning has more power than RNN/LSTM. However, **neural network can be very deep** so that there is no limited performance.
+
+Besides, RNN/LSTM and structured learning are not opposing. Integrating them together can not only explicitly model the dependency but also cost of it is the upper bound of error.
+
+### 4.1 Speech Recognition
+
+To solve this problem, we can conbine RNN/LSTM and HMM together.
+
+Here is equation of HMM:
+$$P(x,y)=P(y_1\mid\mathrm{start})\prod_{l=1}^{L-1}P(y_{l+1}\mid y_l)P(\mathrm{end}\mid y_L)\prod_{l=1}^LP(x_l\mid y_l) \tag{9}$$
+
+Output of RNN/LSTM is a series of conditional probability like $P(a\mid x_l)\quad P(b\mid x_l)\cdots$. We consider that the output of RNN/LSTM can be the last part of input of HMM -- $P(x_l\mid y_l)$. We can determine $P(x_l)=1$ because of we must input x:
+$$P(x_l\mid y_l)=\frac{P(x_l,y_l)}{P(y_l)}=\frac{P(y_l\mid x_l)P(x_l)}{P(y_l)}\\
+\downarrow\\
+P(x_l\mid y_l)=\frac{P(x_l,y_l)}{P(y_l)}=\frac{P(y_l\mid x_l)}{P(y_l)} \tag{10}$$
+
+### 4.2 Semantic Tagging
+
+To solve this problem, we can conbine BiLSTM and CRF/Structured SVM
+
+Considering output of BiLSTM as the input of CRF/Structured SVM -- $w\cdot\phi(x,y)$.
 
 ## REFERENCE
 

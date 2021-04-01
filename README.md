@@ -13,8 +13,9 @@ This blog is written by **Neovim** and **Visual Studio Code**. You may need to c
 1. [Foundations of Nerual Network](Docs/1-Foundations-of-NerualNetwork.md)
 2. [CNN](Docs/2-CNN.md)
 3. [LSTM](Docs/3-LSTM.md)
+4. [Attention](WORKING.md)
 
 #### Code
 1. [Foundations of Nerual Network](Code/1-FoNN/1-FoNN.md)
 2. [CNN](Code/2-CNN/2-CNN.md)
-3. [LSTM](WORKING.md)
+3. [LSTM](Code/3-LSTM/3-LSTM.md)
