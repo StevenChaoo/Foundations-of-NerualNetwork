@@ -1,4 +1,4 @@
-# Long Short-Term Memory
+# Recurrent Neural Network
 
 > **Author: [StevenChaoo](https://github.com/StevenChaoo)**
 
@@ -8,7 +8,7 @@ This blog is written by **Neovim** and **Visual Studio Code**. You may need to c
 
 ## Contents
 
-- [Long Short-Term Memory](#long-short-term-memory)
+- [Recurrent Neural Network](#recurrent-neural-network)
   - [Contents](#contents)
   - [1. Slot Filling Task](#1-slot-filling-task)
     - [1.1 Task Definition](#11-task-definition)

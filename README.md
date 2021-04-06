@@ -10,12 +10,13 @@ This blog is written by **Neovim** and **Visual Studio Code**. You may need to c
 **This blog is used for recording the process of learning foundations of nerual network which also can remind me the importance of foundation of learning a new technology.**
 
 #### Notes
-1. [Foundations of Nerual Network](Docs/1-Foundations-of-NerualNetwork.md)
+1. [FFNN](Docs/1-Foundations-of-NerualNetwork.md)
 2. [CNN](Docs/2-CNN.md)
-3. [LSTM](Docs/3-LSTM.md)
-4. [Attention](WORKING.md)
+3. [RNN](Docs/3-RNN.md)
+4. [Transformer](Docs/4-Transformer.md)
+5. [GNN](WORKING.md)
 
 #### Code
-1. [Foundations of Nerual Network](Code/1-FoNN/1-FoNN.md)
+1. [FFNN](Code/1-FoNN/1-FoNN.md)
 2. [CNN](Code/2-CNN/2-CNN.md)
-3. [LSTM](Code/3-LSTM/3-LSTM.md)
+3. [RNN](Code/3-RNN/3-RNN.md)
