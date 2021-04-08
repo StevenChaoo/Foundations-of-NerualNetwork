@@ -14,7 +14,7 @@ This blog is written by **Neovim** and **Visual Studio Code**. You may need to c
 2. [CNN](Docs/2-CNN.md)
 3. [RNN](Docs/3-RNN.md)
 4. [Transformer](Docs/4-Transformer.md)
-5. [GNN](WORKING.md)
+5. [GNN](Docs/5-GNN.md)
 
 #### Code
 1. [FFNN](Code/1-FoNN/1-FoNN.md)
